@@ -8,11 +8,14 @@ body{
 
 /* Index.html */
 .main_menu{
-    height: 100px;
-    width: 100px;
-    background-color: #333;
+    height: 550px;
+    width: 400px;
+    background-color: #ffffff;
     color: white;
     padding: 10px;
+    margin-top: 10%;
     justify-content: center;
     justify-self: center;
+    border-radius: 15px;
+    border: #a5a5a5 2px solid;
 }
