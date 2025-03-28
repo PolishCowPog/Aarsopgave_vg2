@@ -7,3 +7,12 @@ body{
 
 
 /* Index.html */
+.main_menu{
+    height: 100px;
+    width: 100px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    justify-content: center;
+    justify-self: center;
+}
