@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+
+    <div class="header">
+        <p id="gold"></p>
+        <p id="diamonds"></p>
+    </div>
     
     <!--Unikt for denne siden-->
     {% block body%}
 
     {% endblock%}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
