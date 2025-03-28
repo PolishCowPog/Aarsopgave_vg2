@@ -4,18 +4,62 @@ body{
     margin: 0;
 }
 
+.background{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #adadad;
+    opacity: 0.8;
+    background-image:  radial-gradient(#7c7c7c 1px, transparent 0.5px), radial-gradient(#7c7c7c 1px, #adadad 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+    z-index: -1;
+    top: 0;
+}
 
+.title{
+    width: 96%;
+    height: 100px;
+    color: #000;
+    font-size: 30px;
+    font-family: 'Arial';
+    margin: 2%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
 /* Index.html */
 .main_menu{
     height: 550px;
     width: 400px;
-    background-color: #ffffff;
+    background-color: #adadadb4;
     color: white;
     padding: 10px;
-    margin-top: 10%;
-    justify-content: center;
     justify-self: center;
     border-radius: 15px;
-    border: #a5a5a5 2px solid;
+    border: #7c7c7c 2px solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.main_menu button{
+    width: 300px;
+    height: 75px;
+    background-color: #3b7dbb;
+    border: #2f6496 7px solid;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main_menu button:hover{
+    background-color: #499deb;
+    border: #3d83c5 7px solid;
 }
