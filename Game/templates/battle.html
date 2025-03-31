@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
-
-
 
 <!--Unikt for denne siden-->
 {% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
+<div class="floor2"></div>
+<div class="floor"></div>
 
-
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 {% endblock%}
 
