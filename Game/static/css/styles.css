@@ -2,7 +2,8 @@
 body{
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow: hidden;
+    background-color: #000;
 }
 
 .background{
@@ -72,17 +73,42 @@ body{
 /* base.html --------------------------------------------------------------------------------------------------------------- */
 .header{
     width: 100%;
-    height: 40px;
+    height: 1%;
     background-color: #adadad;
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     gap: 50px;
-    padding-left: 50px;
+    padding-left: 75px;
     align-items: center;
+
 }
+
+.sideMenu{
+    width: 5%;
+    height: 100%;
+    background-color: #adadad;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+.sideMenu a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .header p{
     background-color: #7c7c7c;
     padding: 5px;
     border-radius: 5px;
+}
+
+
+
+/* map.html --------------------------------------------------------------------------------------------------------------- */
+.test {
+    margin-left: 5%; /* Remove margin */
 }

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "Physical laser",
+        "physical_damage": 20,
+        "electric_damage": 0,
+        "heat_damage": 0
+    },
+    {
+        "id": 1,
+        "name": "Electric laser",
+        "physical_damage": 5,
+        "electric_damage": 15,
+        "heat_damage": 0
+    },
+    {
+        "id": 2,
+        "name": "Heat laser",
+        "physical_damage": 5,
+        "electric_damage": 0,
+        "heat_damage": 15
+    }
+]

@@ -12,11 +12,15 @@
         <p id="gold"></p>
         <p id="diamonds"></p>
     </div>
-    
-    <!--Unikt for denne siden-->
-    {% block body%}
+    <div class="sideMenu">
+        <a href="map">map</a>
+        <a href="battle">arena</a>
+        <a href="store">store</a>
+    </div>
 
-    {% endblock%}
+    <!-- Unique content for each page -->
+    {% block body %}
+    {% endblock %}
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
