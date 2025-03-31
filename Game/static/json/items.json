@@ -9,15 +9,94 @@
     {
         "id": 1,
         "name": "Electric laser",
-        "physical_damage": 5,
+        "physical_damage": 0,
         "electric_damage": 15,
         "heat_damage": 0
     },
     {
         "id": 2,
         "name": "Heat laser",
-        "physical_damage": 5,
+        "physical_damage": 0,
         "electric_damage": 0,
         "heat_damage": 15
+    },
+
+
+
+    
+
+    {
+        "id": 101,
+        "name": "Physical torso",
+        "health": 100,
+        "heat_capacity": 50,
+        "electric_capacity": 50,
+        "cooling": 15,
+        "electric_regen": 15,
+        "physical_armor": 2,
+        "electric_armor": 0,
+        "heat_armor": 0
+    },
+    {
+        "id": 102,
+        "name": "Electric torso",
+        "health": 100,
+        "heat_capacity": 50,
+        "electric_capacity": 50,
+        "cooling": 15,
+        "electric_regen": 15,
+        "physical_armor": 0,
+        "electric_armor": 2,
+        "heat_armor": 0
+    },
+    {
+        "id": 103,
+        "name": "Heat torso",
+        "health": 100,
+        "heat_capacity": 50,
+        "electric_capacity": 50,
+        "cooling": 15,
+        "electric_regen": 15,
+        "physical_armor": 0,
+        "electric_armor": 0,
+        "heat_armor": 2
+    },
+
+
+
+
+
+    {
+        "id": 1001,
+        "name": "Physical legs",
+        "health": 50,
+        "physical_armor": 0,
+        "electric_armor": 0,
+        "heat_armor": 0,
+        "physical_damage": 10,
+        "electric_damage": 0,
+        "heat_damage": 0
+    },
+    {
+        "id": 1002,
+        "name": "Electric legs",
+        "health": 50,
+        "physical_armor": 0,
+        "electric_armor": 0,
+        "heat_armor": 0,
+        "physical_damage": 0,
+        "electric_damage": 10,
+        "heat_damage": 0
+    },
+    {
+        "id": 1003,
+        "name": "Heat legs",
+        "health": 50,
+        "physical_armor": 0,
+        "electric_armor": 0,
+        "heat_armor": 0,
+        "physical_damage": 0,
+        "electric_damage": 0,
+        "heat_damage": 10
     }
 ]
