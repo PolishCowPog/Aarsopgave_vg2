@@ -81,6 +81,10 @@ function initiateBattle() {
         document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
         document.getElementById("enemyHeatCounter").innerHTML = "Heat: " + enemyHeat + "/" + enemyHeatCapacity;
         document.getElementById("enemyEnergyCounter").innerHTML = "Energy: " + enemyEnergy + "/" + enemyEnergyCapacity;
+
+
+        var torsoImageUrl = "http://localhost:5000/static/images/torso/physicalTorso.png";
+        document.getElementById("playerTorsoImage").src = torsoImageUrl;
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }

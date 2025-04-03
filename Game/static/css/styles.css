@@ -328,6 +328,15 @@ body{
     color: white;
     flex-direction: column;
 }
+.playerImageContainer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15%;
+    margin-left: 27%;
+    color: white;
+    flex-direction: column;
+}
 .enemyContainer{
     display: flex;
     position: absolute;
@@ -335,6 +344,15 @@ body{
     right: 0;
     margin-bottom: 15%;
     margin-right: 20%;
+    color: white;
+    flex-direction: column;
+}
+.enemyImageContainer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15%;
+    margin-right: 27%;
     color: white;
     flex-direction: column;
 }
