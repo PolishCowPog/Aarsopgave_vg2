@@ -8,5 +8,31 @@
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
+<button class="surrender">
+    <a href="map">
+        Surrender
+    </a>
+</button>
+
+<div class="playerHealthBar">
+    <div class="playerHealthBarColor">
+        <p class="playerHealthCounter">0/0</p>
+    </div>
+</div>
+
+<div class="playerContainer">
+    <p class="torso"></p>
+    <p class="legs"></p>
+    <p class="weapons"></p>
+</div>
+
+
+
+<div class="enemyHealthBar">
+    <div class="enemyHealthBarColor">
+        <p class="enemyHealthCounter">0/0</p>
+    </div>
+</div>
+
 {% endblock%}
 

@@ -10,19 +10,36 @@ if (window.location.pathname !== '/battle') {
     onstart();
 }
 
-
+var EquipedTorso = "Loading"
+var EquipedLegs = "Loading"
+var EquipedWeapon = "Loading"
 
 fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
         console.log(items); // Log the items to the console
 
-        // Example: Display the first item's name
-        //document.body.innerHTML += `<p>First Item: ${items[0].name}</p>`;
+        var EquipedTorso = items[3];
+        var EquipedLegs = items[6];
+        var EquipedWeapon = items[0];
+
+        console.log(EquipedTorso.name); // Log the equipped torso item to the console
+        console.log(EquipedLegs.name); // Log the equipped torso item to the console
+        console.log(EquipedWeapon.name); // Log the equipped torso item to the console
     })
     .catch(error => console.error("Error fetching items.json:", error));
 
 
 if (window.location.pathname === '/battle') {
-    console.log("hello words")
+    initiateBattle();
+
+    updateBattleStats();
+}
+
+function initiateBattle() {
+    console.log("")
+}
+
+function updateBattleStats() {
+    document.getElementById("torso").innerHTML = "asd"
 }

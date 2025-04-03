@@ -26,7 +26,7 @@
     
 
     {
-        "id": 101,
+        "id": 3,
         "name": "Physical torso",
         "health": 100,
         "heat_capacity": 50,
@@ -38,7 +38,7 @@
         "heat_armor": 0
     },
     {
-        "id": 102,
+        "id": 4,
         "name": "Electric torso",
         "health": 100,
         "heat_capacity": 50,
@@ -50,7 +50,7 @@
         "heat_armor": 0
     },
     {
-        "id": 103,
+        "id": 5,
         "name": "Heat torso",
         "health": 100,
         "heat_capacity": 50,
@@ -67,7 +67,7 @@
 
 
     {
-        "id": 1001,
+        "id": 6,
         "name": "Physical legs",
         "health": 50,
         "physical_armor": 0,
@@ -78,7 +78,7 @@
         "heat_damage": 0
     },
     {
-        "id": 1002,
+        "id": 7,
         "name": "Electric legs",
         "health": 50,
         "physical_armor": 0,
@@ -89,7 +89,7 @@
         "heat_damage": 0
     },
     {
-        "id": 1003,
+        "id": 8,
         "name": "Heat legs",
         "health": 50,
         "physical_armor": 0,
