@@ -17,6 +17,16 @@
         <p id="playerHealthCounter">0/0</p>
     </div>
 </div>
+<div class="playerHeatBar">
+    <div class="playerHeatBarColor">
+        <p id="playerHeatCounter">0/0</p>
+    </div>
+</div>
+<div class="playerEnergyBar">
+    <div class="playerEnergyBarColor">
+        <p id="playerEnergyCounter">0/0</p>
+    </div>
+</div>
 
 <div class="playerContainer">
     <p id="playerTorso">a</p>
@@ -28,10 +38,15 @@
 
 <div class="enemyHealthBar">
     <div class="enemyHealthBarColor">
-        <p class="enemyHealthCounter">0/0</p>
+        <p id="enemyHealthCounter">0/0</p>
     </div>
 </div>
 
+<div class="enemyContainer">
+    <p id="enemyTorso">a</p>
+    <p id="enemyWeapon">a</p>
+    <p id="enemyLegs">a</p>
+</div>
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock%}

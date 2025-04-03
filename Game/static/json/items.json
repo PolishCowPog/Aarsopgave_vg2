@@ -10,7 +10,7 @@
         "id": 1,
         "name": "Electric laser",
         "physical_damage": 0,
-        "electric_damage": 15,
+        "electric_damage": 12,
         "heat_damage": 0
     },
     {
@@ -18,7 +18,7 @@
         "name": "Heat laser",
         "physical_damage": 0,
         "electric_damage": 0,
-        "heat_damage": 15
+        "heat_damage": 12
     },
 
 
@@ -28,11 +28,11 @@
     {
         "id": 3,
         "name": "Physical torso",
-        "health": 100,
-        "heat_capacity": 50,
-        "electric_capacity": 50,
-        "cooling": 15,
-        "electric_regen": 15,
+        "health": 135,
+        "heat_capacity": 40,
+        "electric_capacity": 40,
+        "cooling": 12,
+        "electric_regen": 12,
         "physical_armor": 2,
         "electric_armor": 0,
         "heat_armor": 0
@@ -40,11 +40,11 @@
     {
         "id": 4,
         "name": "Electric torso",
-        "health": 100,
-        "heat_capacity": 50,
-        "electric_capacity": 50,
-        "cooling": 15,
-        "electric_regen": 15,
+        "health": 90,
+        "heat_capacity": 35,
+        "electric_capacity": 70,
+        "cooling": 10,
+        "electric_regen": 25,
         "physical_armor": 0,
         "electric_armor": 2,
         "heat_armor": 0
@@ -52,11 +52,11 @@
     {
         "id": 5,
         "name": "Heat torso",
-        "health": 100,
-        "heat_capacity": 50,
-        "electric_capacity": 50,
-        "cooling": 15,
-        "electric_regen": 15,
+        "health": 90,
+        "heat_capacity": 70,
+        "electric_capacity": 35,
+        "cooling": 25,
+        "electric_regen": 10,
         "physical_armor": 0,
         "electric_armor": 0,
         "heat_armor": 2
@@ -69,18 +69,18 @@
     {
         "id": 6,
         "name": "Physical legs",
-        "health": 50,
+        "health": 65,
         "physical_armor": 0,
         "electric_armor": 0,
         "heat_armor": 0,
-        "physical_damage": 10,
+        "physical_damage": 20,
         "electric_damage": 0,
         "heat_damage": 0
     },
     {
         "id": 7,
         "name": "Electric legs",
-        "health": 50,
+        "health": 45,
         "physical_armor": 0,
         "electric_armor": 0,
         "heat_armor": 0,
@@ -91,7 +91,7 @@
     {
         "id": 8,
         "name": "Heat legs",
-        "health": 50,
+        "health": 45,
         "physical_armor": 0,
         "electric_armor": 0,
         "heat_armor": 0,
