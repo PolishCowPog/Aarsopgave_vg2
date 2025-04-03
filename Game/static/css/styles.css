@@ -6,6 +6,9 @@ body{
     background-color: #000;
 }
 
+.ontop{
+    z-index: 2;
+}
 .background{
     display: flex;
     position: fixed;
@@ -139,8 +142,13 @@ body{
     top: 0;
     background-color: #adadad;
     border: #7c7c7c 5px solid;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
 }
-.playerHealthBarColor{
+#playerHealthBarColor{
     width: 100%;
     height: 30px;
     display: flex;
@@ -150,37 +158,138 @@ body{
     background-color: #ffee00;
     border-top: #c2b5009e 10px solid;
     border-bottom: #c2b5009e 10px solid;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    font-weight: bold;
     background-color: #e5e5f7;
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #c2b5009e, #c2b5009e 1px, #ffee00 1px, #ffee00);
 }
-.playerHealthBarColor{
-    width: 100%;
-    height: 30px;
+.playerHeatBar{
+    width: 20%;
+    height: 35px;
     display: flex;
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #ffee00;
-    border-top: #c2b5009e 10px solid;
-    border-bottom: #c2b5009e 10px solid;
+    margin-top: 55px;
+    background-color: #adadad;
+    border: #7c7c7c 5px solid;
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: bold;
+}
+.playerHeatBarColor{
+    width: 100%;
+    height: 15px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ff0000;
+    border-top: #8200009e 10px solid;
+    border-bottom: #8200009e 10px solid;
     background-color: #e5e5f7;
     opacity: 0.8;
     background-size: 20px 20px;
-    background-image:  repeating-linear-gradient(to right, #c2b5009e, #c2b5009e 1px, #ffee00 1px, #ffee00);
+    background-image:  repeating-linear-gradient(to right, #8200009e, #8200009e 1px, #ff0000 1px, #ff0000);
+}
+.playerEnergyBar{
+    width: 20%;
+    height: 35px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 55px;
+    background-color: #adadad;
+    border: #7c7c7c 5px solid;
+    margin-left: 20%;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.playerEnergyBarColor{
+    width: 100%;
+    height: 15px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #6363fb;
+    border-top: #3a3aa29e 10px solid;
+    border-bottom: #3a3aa29e 10px solid;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-size: 20px 20px;
+    background-image:  repeating-linear-gradient(to right, #3a3aa29e, #3a3aa29e 1px, #6363fb 1px, #6363fb);
 }
 
+.enemyHeatBar{
+    width: 20%;
+    height: 35px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 20%;
+    margin-top: 55px;
+    background-color: #adadad;
+    border: #7c7c7c 5px solid;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.enemyHeatBarColor{
+    width: 100%;
+    height: 15px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #ff0000;
+    border-top: #8200009e 10px solid;
+    border-bottom: #8200009e 10px solid;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-size: 20px 20px;
+    background-image:  repeating-linear-gradient(to right, #8200009e, #8200009e 1px, #ff0000 1px, #ff0000);
+}
+.enemyEnergyBar{
+    width: 20%;
+    height: 35px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 55px;
+    background-color: #adadad;
+    border: #7c7c7c 5px solid;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.enemyEnergyBarColor{
+    width: 100%;
+    height: 15px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #6363fb;
+    border-top: #3a3aa29e 10px solid;
+    border-bottom: #3a3aa29e 10px solid;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-size: 20px 20px;
+    background-image:  repeating-linear-gradient(to right, #3a3aa29e, #3a3aa29e 1px, #6363fb 1px, #6363fb);
+}
 .enemyHealthBar{
     width: 40%;
     height: 50px;
@@ -190,6 +299,11 @@ body{
     top: 0;
     background-color: #adadad;
     border: #7c7c7c 5px solid;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
 }
 .enemyHealthBarColor{
     width: 100%;
@@ -200,11 +314,6 @@ body{
     top: 0;
     border-top: #c2b5009e 10px solid;
     border-bottom: #c2b5009e 10px solid;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    font-weight: bold;
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #c2b5009e, #c2b5009e 1px, #ffee00 1px, #ffee00);

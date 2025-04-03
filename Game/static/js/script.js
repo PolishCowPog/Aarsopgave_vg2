@@ -55,15 +55,32 @@ function initiateBattle() {
         maxHealth = parseInt(EquipedTorso.health) + parseInt(EquipedLegs.health);
         health = maxHealth;
         console.log(maxHealth)
+        heatCapacity = parseInt(EquipedTorso.heat_capacity);
+        heat = 0
+        console.log(heatCapacity)
+        energyCapacity = parseInt(EquipedTorso.energy_capacity);
+        energy = energyCapacity
+        console.log(energyCapacity)
 
         enemyMaxHealth = parseInt(enemyEquipedTorso.health) + parseInt(enemyEquipedLegs.health);
         enemyHealth = enemyMaxHealth;
         console.log(enemyMaxHealth)
+        enemyHeatCapacity = parseInt(enemyEquipedTorso.heat_capacity);
+        enemyHeat = 0
+        console.log(enemyHeatCapacity)
+        enemyEnergyCapacity = parseInt(enemyEquipedTorso.energy_capacity);
+        enemyEnergy = enemyEnergyCapacity
+        console.log(enemyEnergyCapacity)
 
 
 
-        document.getElementById("playerHealthCounter").innerHTML = health + "/" + maxHealth;
+        document.getElementById("playerHealthCounter").innerHTML = "HP: " + health + "/" + maxHealth;
+        document.getElementById("playerHeatCounter").innerHTML = "Heat: " + heat + "/" + heatCapacity;
+        document.getElementById("playerEnergyCounter").innerHTML = "Energy: " + energy + "/" + energyCapacity;
+
         document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
+        document.getElementById("enemyHeatCounter").innerHTML = "Heat: " + enemyHeat + "/" + enemyHeatCapacity;
+        document.getElementById("enemyEnergyCounter").innerHTML = "Energy: " + enemyEnergy + "/" + enemyEnergyCapacity;
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }
@@ -73,9 +90,15 @@ function updateBattleStats() {
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
 
-        //health -= 15;
+        health -= 0;
 
-        document.getElementById("playerHealthCounter").innerHTML = health + "/" + maxHealth;
+        document.getElementById("playerHealthCounter").innerHTML = "HP: " + health + "/" + maxHealth;
+        document.getElementById("playerHeatCounter").innerHTML = "Heat: " + heat + "/" + heatCapacity;
+        document.getElementById("playerEnergyCounter").innerHTML = "Energy: " + energy + "/" + energyCapacity;
+
+        document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
+
+        document.getElementById("playerHealthBarColor").style.width = (health / maxHealth) * 100 + "%";
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }
