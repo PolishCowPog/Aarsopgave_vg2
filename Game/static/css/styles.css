@@ -194,6 +194,8 @@ body{
     display: flex;
     position: absolute;
     bottom: 0;
-    margin: bottom  50;
+    margin-bottom: 15%;
+    margin-left: 20%;
     color: white;
+    flex-direction: column;
 }

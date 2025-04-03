@@ -6,8 +6,6 @@
 <div class="floor2"></div>
 <div class="floor"></div>
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
 <button class="surrender">
     <a href="map">
         Surrender
@@ -16,14 +14,14 @@
 
 <div class="playerHealthBar">
     <div class="playerHealthBarColor">
-        <p class="playerHealthCounter">0/0</p>
+        <p id="playerHealthCounter">0/0</p>
     </div>
 </div>
 
 <div class="playerContainer">
-    <p class="torso"></p>
-    <p class="legs"></p>
-    <p class="weapons"></p>
+    <p id="playerTorso">a</p>
+    <p id="playerWeapon">a</p>
+    <p id="playerLegs">a</p>
 </div>
 
 
@@ -34,5 +32,7 @@
     </div>
 </div>
 
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock%}
 

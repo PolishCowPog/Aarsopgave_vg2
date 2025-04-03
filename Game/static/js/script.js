@@ -14,21 +14,6 @@ var EquipedTorso = "Loading"
 var EquipedLegs = "Loading"
 var EquipedWeapon = "Loading"
 
-fetch('/static/json/items.json')
-    .then(response => response.json()) // Parse the JSON data
-    .then(items => {
-        console.log(items); // Log the items to the console
-
-        var EquipedTorso = items[3];
-        var EquipedLegs = items[6];
-        var EquipedWeapon = items[0];
-
-        console.log(EquipedTorso.name); // Log the equipped torso item to the console
-        console.log(EquipedLegs.name); // Log the equipped torso item to the console
-        console.log(EquipedWeapon.name); // Log the equipped torso item to the console
-    })
-    .catch(error => console.error("Error fetching items.json:", error));
-
 
 if (window.location.pathname === '/battle') {
     initiateBattle();
@@ -37,9 +22,43 @@ if (window.location.pathname === '/battle') {
 }
 
 function initiateBattle() {
-    console.log("")
+    fetch('/static/json/items.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(items => {
+        console.log(items); // Log the items to the console
+
+        EquipedTorso = items[3];
+        EquipedWeapon = items[0];
+        EquipedLegs = items[6];
+
+        console.log(EquipedTorso.name); // Log the equipped torso item to the console
+        console.log(EquipedWeapon.name); // Log the equipped torso item to the console
+        console.log(EquipedLegs.name); // Log the equipped torso item to the console
+
+        document.getElementById("playerTorso").innerHTML = EquipedTorso.name;
+        document.getElementById("playerWeapon").innerHTML = EquipedWeapon.name;
+        document.getElementById("playerLegs").innerHTML = EquipedLegs.name;
+
+
+        maxHealth = parseInt(EquipedTorso.health) + parseInt(EquipedLegs.health);
+        health = maxHealth;
+        console.log(maxHealth)
+
+
+
+        document.getElementById("playerHealthCounter").innerHTML = health + "/" + maxHealth;
+    })
+    .catch(error => console.error("Error fetching items.json:", error));
 }
 
 function updateBattleStats() {
-    document.getElementById("torso").innerHTML = "asd"
+    fetch('/static/json/items.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(items => {
+
+        //health -= 15;
+
+        document.getElementById("playerHealthCounter").innerHTML = health + "/" + maxHealth;
+    })
+    .catch(error => console.error("Error fetching items.json:", error));
 }
