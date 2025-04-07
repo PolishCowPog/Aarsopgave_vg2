@@ -31,9 +31,9 @@ function initiateBattle() {
     .then(items => {
         console.log(items); // Log the items to the console
 
-        EquipedTorso = items[3];
-        EquipedWeapon = items[0];
-        EquipedLegs = items[6];
+        EquipedTorso = items[4];
+        EquipedWeapon = items[1];
+        EquipedLegs = items[7];
 
         enemyEquipedTorso = items[Math.floor(Math.random() * 3) + 3];
         enemyEquipedWeapon = items[Math.floor(Math.random() * 3)];
@@ -83,8 +83,15 @@ function initiateBattle() {
         document.getElementById("enemyEnergyCounter").innerHTML = "Energy: " + enemyEnergy + "/" + enemyEnergyCapacity;
 
 
-        var torsoImageUrl = "http://localhost:5000/static/images/torso/physicalTorso.png";
-        document.getElementById("playerTorsoImage").src = torsoImageUrl;
+        document.getElementById("playerTorsoImage").src = "/static/images/torso/" + EquipedTorso.image;
+        document.getElementById("playerWeaponImage").src = "/static/images/lowerWeapons/" + EquipedWeapon.image;
+        document.getElementById("playerLegsImage").src = "/static/images/Legs/" + EquipedLegs.image;
+        document.getElementById("playerLegsImage2").src = "/static/images/Legs/" + EquipedLegs.image;
+
+        document.getElementById("enemyTorsoImage").src = "/static/images/torso/" + enemyEquipedTorso.image;
+        document.getElementById("enemyWeaponImage").src = "/static/images/lowerWeapons/" + enemyEquipedWeapon.image;
+        document.getElementById("enemyLegsImage").src = "/static/images/Legs/" + enemyEquipedLegs.image;
+        document.getElementById("enemyLegsImage2").src = "/static/images/Legs/" + enemyEquipedLegs.image;
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }

@@ -4,21 +4,24 @@
         "name": "Physical laser",
         "physical_damage": 20,
         "electric_damage": 0,
-        "heat_damage": 0
+        "heat_damage": 0,
+        "image": "physicalLaser.png"
     },
     {
         "id": 1,
         "name": "Electric laser",
         "physical_damage": 0,
         "electric_damage": 12,
-        "heat_damage": 0
+        "heat_damage": 0,
+        "image": "electricLaser.png"
     },
     {
         "id": 2,
         "name": "Heat laser",
         "physical_damage": 0,
         "electric_damage": 0,
-        "heat_damage": 12
+        "heat_damage": 12,
+        "image": "heatLaser.png"
     },
 
 
@@ -35,7 +38,8 @@
         "electric_regen": 12,
         "physical_armor": 2,
         "electric_armor": 0,
-        "heat_armor": 0
+        "heat_armor": 0,
+        "image": "physicalTorso.png"
     },
     {
         "id": 4,
@@ -47,7 +51,8 @@
         "electric_regen": 25,
         "physical_armor": 0,
         "electric_armor": 2,
-        "heat_armor": 0
+        "heat_armor": 0,
+        "image": "electricTorso.png"
     },
     {
         "id": 5,
@@ -59,7 +64,8 @@
         "electric_regen": 10,
         "physical_armor": 0,
         "electric_armor": 0,
-        "heat_armor": 2
+        "heat_armor": 2,
+        "image": "heatTorso.png"
     },
 
 
@@ -75,7 +81,8 @@
         "heat_armor": 0,
         "physical_damage": 20,
         "electric_damage": 0,
-        "heat_damage": 0
+        "heat_damage": 0,
+        "image": "physicalLegs.png"
     },
     {
         "id": 7,
@@ -86,7 +93,8 @@
         "heat_armor": 0,
         "physical_damage": 0,
         "electric_damage": 10,
-        "heat_damage": 0
+        "heat_damage": 0,
+        "image": "electricLegs.png"
     },
     {
         "id": 8,
@@ -97,6 +105,7 @@
         "heat_armor": 0,
         "physical_damage": 0,
         "electric_damage": 0,
-        "heat_damage": 10
+        "heat_damage": 10,
+        "image": "heatLegs.png"
     }
 ]

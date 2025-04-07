@@ -332,10 +332,29 @@ body{
     display: flex;
     position: absolute;
     bottom: 0;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     margin-left: 27%;
     color: white;
     flex-direction: column;
+}
+#playerTorsoImage{
+    position: absolute;
+    margin-top: -60px;
+    margin-bottom: 0%;
+    margin-left: 5%;
+}
+#playerWeaponImage{
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    z-index: 2;
+}
+#playerLegsImage{
+    position: absolute;
+    left: 20px;
+}
+#playerLegsImage2{
+    z-index: 1;
 }
 .enemyContainer{
     display: flex;
@@ -351,8 +370,34 @@ body{
     display: flex;
     position: absolute;
     bottom: 0;
-    margin-bottom: 15%;
-    margin-right: 27%;
+    right: 0;
+    margin-bottom: 10%;
+    margin-right: 32%;
     color: white;
     flex-direction: column;
+}
+#enemyTorsoImage{
+    position: absolute;
+    margin-top: -60px;
+    margin-bottom: 0%;
+    margin-right: 5%;
+    transform: scaleX(-1);
+}
+#enemyWeaponImage{
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: 2;
+    transform: scaleX(-1);
+}
+#enemyLegsImage{
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    transform: scaleX(-1);
+    right: 10px;
+}
+#enemyLegsImage2{
+    transform: scaleX(-1);
+    right: 10px;
 }
