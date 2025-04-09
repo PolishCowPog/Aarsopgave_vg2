@@ -31,9 +31,9 @@ function initiateBattle() {
     .then(items => {
         console.log(items); // Log the items to the console
 
-        EquipedTorso = items[4];
-        EquipedWeapon = items[1];
-        EquipedLegs = items[7];
+        EquipedTorso = items[3];
+        EquipedWeapon = items[0];
+        EquipedLegs = items[6];
 
         enemyEquipedTorso = items[Math.floor(Math.random() * 3) + 3];
         enemyEquipedWeapon = items[Math.floor(Math.random() * 3)];
@@ -101,7 +101,27 @@ function updateBattleStats() {
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
 
-        health -= 0;
+        document.getElementById("playerHealthCounter").innerHTML = "HP: " + health + "/" + maxHealth;
+        document.getElementById("playerHeatCounter").innerHTML = "Heat: " + heat + "/" + heatCapacity;
+        document.getElementById("playerEnergyCounter").innerHTML = "Energy: " + energy + "/" + energyCapacity;
+
+        document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
+
+        document.getElementById("playerHealthBarColor").style.width = (health / maxHealth) * 100 + "%";
+        document.getElementById("playerHeatBarColor").style.width = (heat / heatCapacity) * 100 + "%";
+    })
+    .catch(error => console.error("Error fetching items.json:", error));
+}
+
+document.getElementById("playerAttack").addEventListener("click", attack);
+
+function attack(){
+    fetch('/static/json/items.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(items => {
+
+        health -= 50;
+        heat += 10;
 
         document.getElementById("playerHealthCounter").innerHTML = "HP: " + health + "/" + maxHealth;
         document.getElementById("playerHeatCounter").innerHTML = "Heat: " + heat + "/" + heatCapacity;
@@ -110,6 +130,7 @@ function updateBattleStats() {
         document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
 
         document.getElementById("playerHealthBarColor").style.width = (health / maxHealth) * 100 + "%";
+        document.getElementById("playerHeatBarColor").style.width = (heat / heatCapacity) * 100 + "%";
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }

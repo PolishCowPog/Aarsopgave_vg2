@@ -162,6 +162,7 @@ body{
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #c2b5009e, #c2b5009e 1px, #ffee00 1px, #ffee00);
+    transition: 1s;
 }
 .playerHeatBar{
     width: 20%;
@@ -179,7 +180,7 @@ body{
     font-size: 30px;
     font-weight: bold;
 }
-.playerHeatBarColor{
+#playerHeatBarColor{
     width: 100%;
     height: 15px;
     display: flex;
@@ -193,6 +194,7 @@ body{
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #8200009e, #8200009e 1px, #ff0000 1px, #ff0000);
+    transition: 1s;
 }
 .playerEnergyBar{
     width: 20%;
@@ -211,7 +213,7 @@ body{
     font-size: 30px;
     font-weight: bold;
 }
-.playerEnergyBarColor{
+#playerEnergyBarColor{
     width: 100%;
     height: 15px;
     display: flex;
@@ -225,6 +227,7 @@ body{
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #3a3aa29e, #3a3aa29e 1px, #6363fb 1px, #6363fb);
+    transition: 1s;
 }
 
 .enemyHeatBar{
@@ -258,6 +261,7 @@ body{
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #8200009e, #8200009e 1px, #ff0000 1px, #ff0000);
+    transition: 1s;
 }
 .enemyEnergyBar{
     width: 20%;
@@ -289,6 +293,7 @@ body{
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #3a3aa29e, #3a3aa29e 1px, #6363fb 1px, #6363fb);
+    transition: 1s;
 }
 .enemyHealthBar{
     width: 40%;
@@ -317,6 +322,7 @@ body{
     opacity: 0.8;
     background-size: 20px 20px;
     background-image:  repeating-linear-gradient(to right, #c2b5009e, #c2b5009e 1px, #ffee00 1px, #ffee00);
+    transition: 1s;
 }
 
 .playerContainer{
@@ -400,4 +406,9 @@ body{
 #enemyLegsImage2{
     transform: scaleX(-1);
     right: 10px;
+}
+
+#playerAttack{
+    position: absolute;
+    z-index: 5;
 }
