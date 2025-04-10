@@ -5,6 +5,8 @@
         "physical_damage": 20,
         "electric_damage": 0,
         "heat_damage": 0,
+        "self_heat": 5,
+        "self_energy_drain": 5,
         "image": "physicalLaser.png"
     },
     {
@@ -13,6 +15,8 @@
         "physical_damage": 0,
         "electric_damage": 12,
         "heat_damage": 0,
+        "self_heat": 3,
+        "self_energy_drain": 7,
         "image": "electricLaser.png"
     },
     {
@@ -21,6 +25,8 @@
         "physical_damage": 0,
         "electric_damage": 0,
         "heat_damage": 12,
+        "self_heat": 7,
+        "self_energy_drain": 3,
         "image": "heatLaser.png"
     },
 

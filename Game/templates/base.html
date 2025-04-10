@@ -11,13 +11,13 @@
     <div class="header">
         <p id="gold"></p>
         <p id="diamonds"></p>
-        <p>Your username is: {{ user[0] }}</p>
+        <p>{{ user[0] }}</p>
     </div>
     <div class="sideMenu">
         <a href="/">Main Menu</a>
-        <a href="map">map</a>
-        <a href="battle">arena</a>
-        <a href="store">store</a>
+        <a href="/map/{{ session['username'] }}">map</a>
+        <a href="/battle/">arena</a>
+        <a href="/map/{{ session['username'] }}">store</a>
     </div>
 
     <!-- Unique content for each page -->

@@ -10,13 +10,7 @@
 </div>
 
 <div class="main_menu">
-    <!-- Add this button in your desired HTML file -->
-    <a href="/map/{{ session['username'] }}" class="button">Go to Map</a>
-    <form action="/map/{{ session['username'] }}" method="get">
-        <button type="submit">Go to Map</button>
-    </form>
-
-    <a href="map">
+    <a href="/map/{{ session['username'] }}" class="button">
         <button>
             Play
         </button>
