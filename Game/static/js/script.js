@@ -31,7 +31,7 @@ function initiateBattle() {
     .then(items => {
         console.log(items); // Log the items to the console
 
-        EquipedTorso = items[3];
+        EquipedTorso = items[5];
         EquipedWeapon = items[0];
         EquipedLegs = items[6];
 

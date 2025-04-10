@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
-
-
-
 <!--Unikt for denne siden-->
 {% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
+<div class="background"></div>
 
+<div class="title">
+    <h1>Mech Wars</h1>
+</div>
+
+<div class="main_menu">
+    <a href="/">Back</a>
+    <form method="POST" action="/submit">
+        <input type="text" name="username" id="username">
+        <input type="password" name="password" id="password">
+        <button type="submit">Register</button>
+    </form>
+</div>
 
 
 
 {% endblock%}
+

@@ -6,22 +6,29 @@
 
 <div class="title">
     <h1>Mech Wars</h1>
+    <p></p>
 </div>
 
 <div class="main_menu">
+    <!-- Add this button in your desired HTML file -->
+    <a href="/map/{{ session['username'] }}" class="button">Go to Map</a>
+    <form action="/map/{{ session['username'] }}" method="get">
+        <button type="submit">Go to Map</button>
+    </form>
+
     <a href="map">
         <button>
             Play
         </button>
     </a>
 
-    <a href="">
+    <a href="login">
         <button>
             Login
         </button>
     </a>
     
-    <a href="">
+    <a href="register">
         <button>
             Register
         </button>
