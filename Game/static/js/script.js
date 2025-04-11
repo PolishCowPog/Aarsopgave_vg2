@@ -96,7 +96,19 @@ function updateBattleStats() {
         
         document.getElementById("playerHealthBarColor").style.width = (health / maxHealth) * 100 + "%";
         document.getElementById("playerHeatBarColor").style.width = (heat / heatCapacity) * 100 + "%";
+        if (heat > heatCapacity){
+            document.getElementById("playerHeatBarColor").style.width = 100 + "%";
+        }
+        if (heat <= 0){
+            document.getElementById("playerHeatBarColor").style.width = 0 + "%";
+        }
         document.getElementById("playerEnergyBarColor").style.width = (energy / energyCapacity) * 100 + "%";
+        if (energy > energyCapacity){
+            document.getElementById("playerEnergyBarColor").style.width = 100 + "%";
+        }
+        if (energy <= 0){
+            document.getElementById("playerEnergyBarColor").style.width = 0 + "%";
+        }
 
 
         document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
@@ -105,7 +117,19 @@ function updateBattleStats() {
 
         document.getElementById("enemyHealthBarColor").style.width = (enemyHealth / enemyMaxHealth) * 100 + "%";
         document.getElementById("enemyHeatBarColor").style.width = (enemyHeat / enemyHeatCapacity) * 100 + "%";
+        if (enemyHeat > enemyHeatCapacity){
+            document.getElementById("enemyHeatBarColor").style.width = 100 + "%";
+        }
+        if (enemyHeat <= 0){
+            document.getElementById("enemyHeatBarColor").style.width = 0 + "%";
+        }
         document.getElementById("enemyEnergyBarColor").style.width = (enemyEnergy / enemyEnergyCapacity) * 100 + "%";
+        if (enemyEnergy > enemyEnergyCapacity){
+            document.getElementById("enemyEnergyBarColor").style.width = 100 + "%";
+        }
+        if (enemyEnergy <= 0){
+            document.getElementById("enemyEnergyBarColor").style.width = 0 + "%";
+        }
 
 
 
@@ -136,8 +160,45 @@ function attack(){
             energy -= EquipedWeapon.self_energy_drain
         }
         if (player_turns == 0){
-            if (enemyHeat >= enemyHeatCapacity*0.8){
-                enemyHeat = 0
+            enemy_turns = 2
+            energy += EquipedTorso.electric_regen
+            if (energy > energyCapacity){
+                energy = energyCapacity
+            }
+            enemyAttack()
+            enemyAttack()
+        }
+
+        updateBattleStats();
+    })
+    .catch(error => console.error("Error fetching items.json:", error));
+}
+function enemyAttack(){
+    fetch('/static/json/items.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(items => {
+
+
+        if (enemy_turns > 0){
+            if (enemyHeat < enemyHeatCapacity*0.8){
+                enemy_turns -= 1
+                health -= enemyEquipedWeapon.physical_damage + enemyEquipedWeapon.electric_damage + enemyEquipedWeapon.heat_damage
+                heat += enemyEquipedWeapon.heat_damage
+                energy -= enemyEquipedWeapon.electric_damage
+    
+                enemyHeat += enemyEquipedWeapon.self_heat
+                enemyEnergy -= enemyEquipedWeapon.self_energy_drain
+            }
+            else{
+                enemy_turns -= 1
+                enemyHeat -= enemyEquipedTorso.cooling
+            }
+        }
+        if (enemy_turns == 0){
+            player_turns = 2
+            enemyEnergy += enemyEquipedTorso.electric_regen
+            if (enemyEnergy > enemyEnergyCapacity){
+                enemyEnergy = enemyEnergyCapacity
             }
         }
 
@@ -145,6 +206,3 @@ function attack(){
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }
-
-
-
