@@ -459,3 +459,31 @@ body{
     color: #000;
     font-size: 30px;
 }
+
+.turnIndicator{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 25px;
+    margin-top: 100px;
+    margin-left: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+#turn1{
+    /* background-color: #3fc43f; */
+    /* background-color: #538353; */
+    height: 20px;
+    width: 20px;
+    border: solid #263c26 7.5px;
+    border-radius: 999px;
+}
+#turn2{
+    /* background-color: #3fc43f; */
+    /* background-color: #538353; */
+    height: 20px;
+    width: 20px;
+    border: solid #263c26 7.5px;
+    border-radius: 999px;
+}

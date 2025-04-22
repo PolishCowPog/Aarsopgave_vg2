@@ -82,6 +82,10 @@ function initiateBattle() {
         document.getElementById("enemyWeaponImage").src = "/static/images/lowerWeapons/" + enemyEquipedWeapon.image;
         document.getElementById("enemyLegsImage").src = "/static/images/Legs/" + enemyEquipedLegs.image;
         document.getElementById("enemyLegsImage2").src = "/static/images/Legs/" + enemyEquipedLegs.image;
+
+
+        document.getElementById("turn1").style.backgroundColor = "#3fc43f"
+        document.getElementById("turn2").style.backgroundColor = "#3fc43f"
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }
@@ -134,6 +138,18 @@ function updateBattleStats() {
 
 
 
+        if (player_turns == 2){
+            document.getElementById("turn1").style.backgroundColor = "#3fc43f"
+            document.getElementById("turn2").style.backgroundColor = "#3fc43f"
+        }
+        if (player_turns == 1){
+            document.getElementById("turn2").style.backgroundColor = "#538353"
+        }
+        if (player_turns == 0){
+            document.getElementById("turn1").style.backgroundColor = "#538353"
+            document.getElementById("turn2").style.backgroundColor = "#538353"
+        }
+
         
     })
     .catch(error => console.error("Error fetching items.json:", error));
@@ -149,8 +165,6 @@ function attack(){
     fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
-
-
         if (player_turns > 0){
             player_turns -= 1
             enemyHealth -= EquipedWeapon.physical_damage + EquipedWeapon.electric_damage + EquipedWeapon.heat_damage
@@ -166,8 +180,12 @@ function attack(){
             if (energy > energyCapacity){
                 energy = energyCapacity
             }
-            enemyAttack()
-            enemyAttack()
+            setTimeout(function (){
+                enemyAttack()         
+            }, 2000);
+            setTimeout(function (){
+                enemyAttack()         
+            }, 3000);
         }
 
         updateBattleStats();
