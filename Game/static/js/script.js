@@ -17,6 +17,7 @@ var EquipedWeapon = "Loading"
 var enemyEquipedTorso = "Loading"
 var enemyEquipedLegs = "Loading"
 var enemyEquipedWeapon = "Loading"
+var enemyEquipedWeapon2 = "Loading"
 
 
 if (window.location.pathname === '/battle/') {
