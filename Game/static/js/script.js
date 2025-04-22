@@ -116,7 +116,7 @@ function updateBattleStats() {
         }
 
 
-        document.getElementById("enemyHealthCounter").innerHTML = enemyHealth + "/" + enemyMaxHealth;
+        document.getElementById("enemyHealthCounter").innerHTML = "HP: " + enemyHealth + "/" + enemyMaxHealth;
         document.getElementById("enemyHeatCounter").innerHTML = "Heat: " + enemyHeat + "/" + enemyHeatCapacity;
         document.getElementById("enemyEnergyCounter").innerHTML = "Energy: " + enemyEnergy + "/" + enemyEnergyCapacity;
 
@@ -143,11 +143,11 @@ function updateBattleStats() {
             document.getElementById("turn2").style.backgroundColor = "#3fc43f"
         }
         if (player_turns == 1){
-            document.getElementById("turn2").style.backgroundColor = "#538353"
+            document.getElementById("turn2").style.backgroundColor = "#365736"
         }
         if (player_turns == 0){
-            document.getElementById("turn1").style.backgroundColor = "#538353"
-            document.getElementById("turn2").style.backgroundColor = "#538353"
+            document.getElementById("turn1").style.backgroundColor = "#365736"
+            document.getElementById("turn2").style.backgroundColor = "#365736"
         }
 
         
