@@ -24,7 +24,7 @@
         "name": "Heat laser",
         "physical_damage": 0,
         "electric_damage": 0,
-        "heat_damage": 12,
+        "heat_damage": 120,
         "self_heat": 7,
         "self_energy_drain": 3,
         "image": "heatLaser.png"

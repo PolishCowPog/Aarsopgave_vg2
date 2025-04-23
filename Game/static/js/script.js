@@ -204,13 +204,18 @@ function attack2(){
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
         if (player_turns > 0){
-            player_turns -= 1
-            enemyHealth -= EquipedWeapon2.physical_damage + EquipedWeapon2.electric_damage + EquipedWeapon2.heat_damage
-            enemyHeat += EquipedWeapon2.heat_damage
-            enemyEnergy -= EquipedWeapon2.electric_damage
-
-            heat += EquipedWeapon2.self_heat
-            energy -= EquipedWeapon2.self_energy_drain
+            if (heat < heatCapacity){
+                player_turns -= 1
+                enemyHealth -= EquipedWeapon2.physical_damage + EquipedWeapon2.electric_damage + EquipedWeapon2.heat_damage
+                enemyHeat += EquipedWeapon2.heat_damage
+                enemyEnergy -= EquipedWeapon2.electric_damage
+    
+                heat += EquipedWeapon2.self_heat
+                energy -= EquipedWeapon2.self_energy_drain
+            }
+            else{
+                
+            }
         }
 
 
@@ -235,6 +240,8 @@ function attack2(){
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }
+
+
 function enemyAttack(){
     fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
