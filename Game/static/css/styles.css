@@ -345,16 +345,6 @@ body{
     background-image:  repeating-linear-gradient(to right, #c2b5009e, #c2b5009e 1px, #ffee00 1px, #ffee00);
     transition: 1s;
 }
-
-.playerContainer{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 15%;
-    margin-left: 20%;
-    color: white;
-    flex-direction: column;
-}
 .playerImageContainer{
     display: flex;
     position: absolute;
@@ -388,16 +378,6 @@ body{
 }
 #playerLegsImage2{
     z-index: 1;
-}
-.enemyContainer{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 15%;
-    margin-right: 20%;
-    color: white;
-    flex-direction: column;
 }
 .enemyImageContainer{
     display: flex;

@@ -47,14 +47,6 @@ function initiateBattle() {
         console.log(EquipedWeapon.name); // Log the equipped torso item to the console
         console.log(EquipedLegs.name); // Log the equipped torso item to the console
 
-        document.getElementById("playerTorso").innerHTML = EquipedTorso.name;
-        document.getElementById("playerWeapon").innerHTML = EquipedWeapon.name;
-        document.getElementById("playerLegs").innerHTML = EquipedLegs.name;
-
-        document.getElementById("enemyTorso").innerHTML = enemyEquipedTorso.name;
-        document.getElementById("enemyWeapon").innerHTML = enemyEquipedWeapon.name;
-        document.getElementById("enemyLegs").innerHTML = enemyEquipedLegs.name;
-
 
         maxHealth = parseInt(EquipedTorso.health) + parseInt(EquipedLegs.health);
         health = maxHealth;
