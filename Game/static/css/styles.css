@@ -429,13 +429,13 @@ body{
     bottom: 0;
     display: block;
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
 .playerControls button{
     height: 100px;
     width: 100px;
-    border: solid #fff 5px;
+    border: solid #3fc43f 5px;
     border-radius: 15px;
     color: white;
     background: none;
@@ -447,8 +447,7 @@ body{
 }
 
 .playerControls button:hover{
-    background-color: #ffffff;
-    color: #000;
+    transform: scale(1.1);
     font-size: 30px;
 }
 .playerControls button img:hover{

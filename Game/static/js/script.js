@@ -149,6 +149,18 @@ function updateBattleStats() {
             document.getElementById("turn2").style.backgroundColor = "#365736"
         }
 
+        if (weapon1cooldown == false){
+            document.getElementById("attack1").style.borderColor = "#3fc43f"
+        }
+        else{
+            document.getElementById("attack1").style.borderColor = "#ff0000"
+        }
+        if (weapon2cooldown == false){
+            document.getElementById("attack2").style.borderColor = "#3fc43f"
+        }
+        else{
+            document.getElementById("attack2").style.borderColor = "#ff0000"
+        }
         
     })
     .catch(error => console.error("Error fetching items.json:", error));
@@ -162,12 +174,14 @@ attackButton2.addEventListener("click", attack2)
 var player_turns = 2
 player_active = true
 var enemy_turns = 0
+weapon1cooldown = false
+weapon2cooldown = false
 
 function attack1(){
     fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
-        if (player_turns > 0){
+        if (player_turns > 0 && weapon1cooldown == false){
             player_turns -= 1
             enemyHealth -= EquipedWeapon.physical_damage + EquipedWeapon.electric_damage + EquipedWeapon.heat_damage
             enemyHeat += EquipedWeapon.heat_damage
@@ -175,6 +189,7 @@ function attack1(){
 
             heat += EquipedWeapon.self_heat
             energy -= EquipedWeapon.self_energy_drain
+            weapon1cooldown = true
         }
 
 
@@ -191,7 +206,9 @@ function attack1(){
             }, 2000);
             setTimeout(function (){
                 enemyAttack()
-                player_active = true         
+                player_active = true    
+                weapon1cooldown = false
+                weapon2cooldown = false     
             }, 3000);
         }
 
@@ -203,7 +220,7 @@ function attack2(){
     fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
-        if (player_turns > 0){
+        if (player_turns > 0 && weapon2cooldown == false){
             if (heat < heatCapacity){
                 player_turns -= 1
                 enemyHealth -= EquipedWeapon2.physical_damage + EquipedWeapon2.electric_damage + EquipedWeapon2.heat_damage
@@ -212,6 +229,7 @@ function attack2(){
     
                 heat += EquipedWeapon2.self_heat
                 energy -= EquipedWeapon2.self_energy_drain
+                weapon2cooldown = true
             }
             else{
                 
@@ -232,7 +250,9 @@ function attack2(){
             }, 2000);
             setTimeout(function (){
                 enemyAttack()
-                player_active = true         
+                player_active = true
+                weapon1cooldown = false      
+                weapon2cooldown = false   
             }, 3000);
         }
 
