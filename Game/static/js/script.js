@@ -13,6 +13,7 @@ if (window.location.pathname !== '/battle/') {
 var EquipedTorso = "Loading"
 var EquipedLegs = "Loading"
 var EquipedWeapon = "Loading"
+var EquipedWeapon2 = "Loading"
 
 var enemyEquipedTorso = "Loading"
 var enemyEquipedLegs = "Loading"
@@ -34,6 +35,8 @@ function initiateBattle() {
 
         EquipedTorso = items[3];
         EquipedWeapon = items[2];
+        EquipedWeapon2 = items[1];
+
         EquipedLegs = items[6];
 
         enemyEquipedTorso = items[Math.floor(Math.random() * 3) + 3];
@@ -75,8 +78,12 @@ function initiateBattle() {
 
         document.getElementById("playerTorsoImage").src = "/static/images/torso/" + EquipedTorso.image;
         document.getElementById("playerWeaponImage").src = "/static/images/lowerWeapons/" + EquipedWeapon.image;
+        document.getElementById("playerWeaponImage2").src = "/static/images/lowerWeapons/" + EquipedWeapon2.image;
         document.getElementById("playerLegsImage").src = "/static/images/Legs/" + EquipedLegs.image;
         document.getElementById("playerLegsImage2").src = "/static/images/Legs/" + EquipedLegs.image;
+
+        document.getElementById("attack1Image").src = "/static/images/lowerWeapons/" + EquipedWeapon.image;
+        document.getElementById("attack2Image").src = "/static/images/lowerWeapons/" + EquipedWeapon2.image;
 
         document.getElementById("enemyTorsoImage").src = "/static/images/torso/" + enemyEquipedTorso.image;
         document.getElementById("enemyWeaponImage").src = "/static/images/lowerWeapons/" + enemyEquipedWeapon.image;
@@ -155,13 +162,16 @@ function updateBattleStats() {
     .catch(error => console.error("Error fetching items.json:", error));
 }
 
-attackButton = document.getElementById("playerAttack")
-attackButton.addEventListener("click", attack)
+attackButton = document.getElementById("attack1")
+attackButton.addEventListener("click", attack1)
+attackButton2 = document.getElementById("attack2")
+attackButton2.addEventListener("click", attack2)
 
 var player_turns = 2
+player_active = true
 var enemy_turns = 0
 
-function attack(){
+function attack1(){
     fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
@@ -174,7 +184,11 @@ function attack(){
             heat += EquipedWeapon.self_heat
             energy -= EquipedWeapon.self_energy_drain
         }
-        if (player_turns == 0){
+
+
+
+        if (player_turns == 0 && player_active == true){
+            player_active = false
             enemy_turns = 2
             energy += EquipedTorso.electric_regen
             if (energy > energyCapacity){
@@ -184,7 +198,44 @@ function attack(){
                 enemyAttack()         
             }, 2000);
             setTimeout(function (){
+                enemyAttack()
+                player_active = true         
+            }, 3000);
+        }
+
+        updateBattleStats();
+    })
+    .catch(error => console.error("Error fetching items.json:", error));
+}
+function attack2(){
+    fetch('/static/json/items.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(items => {
+        if (player_turns > 0){
+            player_turns -= 1
+            enemyHealth -= EquipedWeapon2.physical_damage + EquipedWeapon2.electric_damage + EquipedWeapon2.heat_damage
+            enemyHeat += EquipedWeapon2.heat_damage
+            enemyEnergy -= EquipedWeapon2.electric_damage
+
+            heat += EquipedWeapon2.self_heat
+            energy -= EquipedWeapon2.self_energy_drain
+        }
+
+
+
+        if (player_turns == 0 && player_active == true){
+            player_active = false
+            enemy_turns = 2
+            energy += EquipedTorso.electric_regen
+            if (energy > energyCapacity){
+                energy = energyCapacity
+            }
+            setTimeout(function (){
                 enemyAttack()         
+            }, 2000);
+            setTimeout(function (){
+                enemyAttack()
+                player_active = true         
             }, 3000);
         }
 

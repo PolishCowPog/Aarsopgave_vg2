@@ -376,6 +376,12 @@ body{
     left: 20px;
     z-index: 2;
 }
+#playerWeaponImage2{
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    z-index: -2;
+}
 #playerLegsImage{
     position: absolute;
     left: 20px;
@@ -442,6 +448,7 @@ body{
     position: absolute;
     bottom: 0;
     display: block;
+    display: flex;
 }
 
 .playerControls button{
@@ -452,6 +459,7 @@ body{
     color: white;
     background: none;
     font-size: 25px;
+    transition: 0.3s;
 }
 
 .playerControls button:hover{
@@ -478,6 +486,7 @@ body{
     width: 20px;
     border: solid #263c26 7.5px;
     border-radius: 999px;
+    transition: 0.3s;
 }
 #turn2{
     /* background-color: #3fc43f; */
@@ -486,4 +495,5 @@ body{
     width: 20px;
     border: solid #263c26 7.5px;
     border-radius: 999px;
+    transition: 0.3s;
 }

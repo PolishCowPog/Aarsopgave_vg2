@@ -34,10 +34,11 @@
     <p id="playerLegs">a</p>
 </div>
 <div class="playerImageContainer">
-    <img id="playerTorsoImage" src="" alt="" width="125%">
-    <img id="playerWeaponImage" src="" alt="" width="125%">
-    <img id="playerLegsImage" src="" alt="" width="125%">
-    <img id="playerLegsImage2" src="" alt="" width="125%">
+    <img draggable="false" id="playerTorsoImage" src="" alt="" width="125%">
+    <img draggable="false" id="playerWeaponImage" src="" alt="" width="125%">
+    <img draggable="false" id="playerWeaponImage2" src="" alt="" width="125%">
+    <img draggable="false" id="playerLegsImage" src="" alt="" width="125%">
+    <img draggable="false" id="playerLegsImage2" src="" alt="" width="125%">
 </div>
 
 
@@ -63,10 +64,10 @@
     <p id="enemyLegs">a</p>
 </div>
 <div class="enemyImageContainer">
-    <img id="enemyTorsoImage" src="" alt="" width="125%">
-    <img id="enemyWeaponImage" src="" alt="" width="125%">
-    <img id="enemyLegsImage" src="" alt="" width="125%">
-    <img id="enemyLegsImage2" src="" alt="" width="125%">
+    <img draggable="false" id="enemyTorsoImage" src="" alt="" width="125%">
+    <img draggable="false" id="enemyWeaponImage" src="" alt="" width="125%">
+    <img draggable="false" id="enemyLegsImage" src="" alt="" width="125%">
+    <img draggable="false" id="enemyLegsImage2" src="" alt="" width="125%">
 </div>
 
 <div class="turnIndicator">
@@ -75,12 +76,10 @@
 </div>
 
 <div class="playerControls">
-    <button id="attack1">attack 1</button>
-    <button id="attack2">attack 2</button>
+    <button id="attack1"><img id="attack1Image" src="" alt="" width="100%"></button>
+    <button id="attack2"><img id="attack2Image" src="" alt="" width="100%"></button>
     <button id="cooldown">Cool down</button>
 </div>
-
-<button id="playerAttack">player Attack</button onclick="attack()">
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock%}
