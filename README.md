@@ -1,4 +1,4 @@
-# Aarsopgave_vg2
+# Mech Wars
 
 Turned based game:
 - Create your mech with different weapons and parts.
