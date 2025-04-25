@@ -232,6 +232,9 @@ function attack2(){
                 enemyHealth -= EquipedWeapon2.physical_damage + EquipedWeapon2.electric_damage + EquipedWeapon2.heat_damage
                 enemyHeat += EquipedWeapon2.heat_damage
                 enemyEnergy -= EquipedWeapon2.electric_damage
+                if (enemyEnergy < 0){
+                    enemyEnergy = 0
+                }
     
                 heat += EquipedWeapon2.self_heat
                 energy -= EquipedWeapon2.self_energy_drain
@@ -312,6 +315,9 @@ function enemyAttack(){
                 health -= enemyEquipedWeapon.physical_damage + enemyEquipedWeapon.electric_damage + enemyEquipedWeapon.heat_damage
                 heat += enemyEquipedWeapon.heat_damage
                 energy -= enemyEquipedWeapon.electric_damage
+                if (energy < 0){
+                    energy = 0
+                }
     
                 enemyHeat += enemyEquipedWeapon.self_heat
                 enemyEnergy -= enemyEquipedWeapon.self_energy_drain
