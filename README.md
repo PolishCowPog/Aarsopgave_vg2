@@ -9,3 +9,7 @@ Turned based game:
 
 To make game:
 - HTML, CSS, JavaScript, JSON, Flask(Python), mySQL
+
+
+How the combat works in game:
+![tutorialMechWars](https://github.com/user-attachments/assets/5f1f19ba-b37f-48cb-a229-0eeb77f7133d)
