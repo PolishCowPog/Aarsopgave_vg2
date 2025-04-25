@@ -14,5 +14,7 @@ To make game:
 How the combat works in game:
  - 🔥⚡💪**Elements:**
  - ❤️**HP:** HP is based on the parts of the mech. Once it reaches 0 you or your enemy lose.
+   ![image](https://github.com/user-attachments/assets/6ce17257-18f6-461c-a763-31ae489a3a65)
+
  - 🔥**Heat:** asd
  - ⚡**Energy:** ads
