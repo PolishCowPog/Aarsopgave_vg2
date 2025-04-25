@@ -10,6 +10,8 @@ if (window.location.pathname !== '/battle/') {
     onstart();
 }
 
+
+// -- Battle Variables -------------------------------------------------------------------------- //
 var EquipedTorso = "Loading"
 var EquipedLegs = "Loading"
 var EquipedWeapon = "Loading"
@@ -166,19 +168,6 @@ function updateBattleStats() {
     .catch(error => console.error("Error fetching items.json:", error));
 }
 
-attackButton = document.getElementById("attack1")
-attackButton.addEventListener("click", attack1)
-attackButton2 = document.getElementById("attack2")
-attackButton2.addEventListener("click", attack2)
-
-cooldownButton = document.getElementById("cooldown")
-cooldownButton.addEventListener("click", cooldown)
-
-var player_turns = 2
-player_active = true
-var enemy_turns = 0
-weapon1cooldown = false
-weapon2cooldown = false
 
 function attack1(){
     fetch('/static/json/items.json')
@@ -190,16 +179,16 @@ function attack1(){
                 enemyHealth -= EquipedWeapon.physical_damage + EquipedWeapon.electric_damage + EquipedWeapon.heat_damage
                 enemyHeat += EquipedWeapon.heat_damage
                 enemyEnergy -= EquipedWeapon.electric_damage
-    
+                
                 heat += EquipedWeapon.self_heat
                 energy -= EquipedWeapon.self_energy_drain
                 weapon1cooldown = true
             }
             
         }
-
-
-
+        
+        
+        
         if (player_turns == 0 && player_active == true){
             player_active = false
             enemy_turns = 2
@@ -217,7 +206,7 @@ function attack1(){
                 weapon2cooldown = false     
             }, 3000);
         }
-
+        
         updateBattleStats();
     })
     .catch(error => console.error("Error fetching items.json:", error));
@@ -235,15 +224,15 @@ function attack2(){
                 if (enemyEnergy < 0){
                     enemyEnergy = 0
                 }
-    
+                
                 heat += EquipedWeapon2.self_heat
                 energy -= EquipedWeapon2.self_energy_drain
                 weapon2cooldown = true
             }
         }
-
-
-
+        
+        
+        
         if (player_turns == 0 && player_active == true){
             player_active = false
             enemy_turns = 2
@@ -261,7 +250,7 @@ function attack2(){
                 weapon2cooldown = false
             }, 3000);
         }
-
+        
         updateBattleStats();
     })
     .catch(error => console.error("Error fetching items.json:", error));
@@ -277,9 +266,9 @@ function cooldown(){
                 heat = 0
             }
         }
-
-
-
+        
+        
+        
         if (player_turns == 0 && player_active == true){
             player_active = false
             enemy_turns = 2
@@ -297,7 +286,7 @@ function cooldown(){
                 weapon2cooldown = false      
             }, 3000);
         }
-
+        
         updateBattleStats();
     })
     .catch(error => console.error("Error fetching items.json:", error));     
@@ -307,8 +296,8 @@ function enemyAttack(){
     fetch('/static/json/items.json')
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
-
-
+        
+        
         if (enemy_turns > 0){
             if (enemyHeat < enemyHeatCapacity*0.8){
                 enemy_turns -= 1
@@ -318,7 +307,7 @@ function enemyAttack(){
                 if (energy < 0){
                     energy = 0
                 }
-    
+                
                 enemyHeat += enemyEquipedWeapon.self_heat
                 enemyEnergy -= enemyEquipedWeapon.self_energy_drain
             }
@@ -348,8 +337,36 @@ function enemyAttack(){
             
             updateBattleStats();
         }
-
+        
         updateBattleStats();
     })
     .catch(error => console.error("Error fetching items.json:", error));
+}
+
+if (window.location.pathname === '/battle/') {
+    attackButton = document.getElementById("attack1")
+    attackButton.addEventListener("click", attack1)
+    attackButton2 = document.getElementById("attack2")
+    attackButton2.addEventListener("click", attack2)
+    
+    cooldownButton = document.getElementById("cooldown")
+    cooldownButton.addEventListener("click", cooldown)
+
+    document.getElementById("tutorial").style.visibility = "hidden"
+
+    // showTutorialButton = document.getElementById("tutorialToggle")
+    // closeTutorialButton = document.getElementById("closeTutorial") 
+
+    // showTutorialButton.addEventListener("click", function() {
+    //     document.getElementById("tutorial").style.visibility = "visible"
+    // })
+    // closeTutorialButton.addEventListener("click", function() {
+    //     document.getElementById("tutorial").style.visibility = "hidden"
+    // })
+    
+    var player_turns = 2
+    player_active = true
+    var enemy_turns = 0
+    weapon1cooldown = false
+    weapon2cooldown = false
 }
