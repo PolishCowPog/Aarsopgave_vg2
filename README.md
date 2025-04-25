@@ -12,5 +12,5 @@ To make game:
 
 
 How the combat works in game:
-**HP**
+ - **HP**
 ![tutorialMechWars](https://github.com/user-attachments/assets/5f1f19ba-b37f-48cb-a229-0eeb77f7133d)
