@@ -1,4 +1,4 @@
-# Aarsopgave_vg2
+# Mech Wars
 
 Turned based game:
 - Create your mech with different weapons and parts.
@@ -9,3 +9,19 @@ Turned based game:
 
 To make game:
 - HTML, CSS, JavaScript, JSON, Flask(Python), mySQL
+
+#
+How the combat works in game:
+ - **🤖🦾🦿Mech parts:**
+#
+
+ - 🔥⚡💪**Elements:**
+#
+
+ - ❤️**HP:** HP is based on the parts of the mech. Once it reaches 0 you or your enemy lose.
+#
+
+ - 🔥**Heat:** asd
+#
+
+ - ⚡**Energy:** ads
