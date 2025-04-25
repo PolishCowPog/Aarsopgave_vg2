@@ -12,5 +12,7 @@ To make game:
 
 
 How the combat works in game:
- - **HP**
-![tutorialMechWars](https://github.com/user-attachments/assets/5f1f19ba-b37f-48cb-a229-0eeb77f7133d)
+ - 🔥⚡💪**Elements:**
+ - ❤️**HP:** HP is based on the parts of the mech. Once it reaches 0 you or your enemy lose.
+ - 🔥**Heat:** asd
+ - ⚡**Energy:** ads
