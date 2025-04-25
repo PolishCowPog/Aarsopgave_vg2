@@ -171,6 +171,9 @@ attackButton.addEventListener("click", attack1)
 attackButton2 = document.getElementById("attack2")
 attackButton2.addEventListener("click", attack2)
 
+cooldownButton = document.getElementById("cooldown")
+cooldownButton.addEventListener("click", cooldown)
+
 var player_turns = 2
 player_active = true
 var enemy_turns = 0
@@ -182,14 +185,17 @@ function attack1(){
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
         if (player_turns > 0 && weapon1cooldown == false){
-            player_turns -= 1
-            enemyHealth -= EquipedWeapon.physical_damage + EquipedWeapon.electric_damage + EquipedWeapon.heat_damage
-            enemyHeat += EquipedWeapon.heat_damage
-            enemyEnergy -= EquipedWeapon.electric_damage
-
-            heat += EquipedWeapon.self_heat
-            energy -= EquipedWeapon.self_energy_drain
-            weapon1cooldown = true
+            if (energy > EquipedWeapon.self_energy_drain){
+                player_turns -= 1
+                enemyHealth -= EquipedWeapon.physical_damage + EquipedWeapon.electric_damage + EquipedWeapon.heat_damage
+                enemyHeat += EquipedWeapon.heat_damage
+                enemyEnergy -= EquipedWeapon.electric_damage
+    
+                heat += EquipedWeapon.self_heat
+                energy -= EquipedWeapon.self_energy_drain
+                weapon1cooldown = true
+            }
+            
         }
 
 
@@ -221,7 +227,7 @@ function attack2(){
     .then(response => response.json()) // Parse the JSON data
     .then(items => {
         if (player_turns > 0 && weapon2cooldown == false){
-            if (heat < heatCapacity){
+            if (energy > EquipedWeapon2.self_energy_drain){
                 player_turns -= 1
                 enemyHealth -= EquipedWeapon2.physical_damage + EquipedWeapon2.electric_damage + EquipedWeapon2.heat_damage
                 enemyHeat += EquipedWeapon2.heat_damage
@@ -230,9 +236,6 @@ function attack2(){
                 heat += EquipedWeapon2.self_heat
                 energy -= EquipedWeapon2.self_energy_drain
                 weapon2cooldown = true
-            }
-            else{
-                
             }
         }
 
@@ -252,7 +255,7 @@ function attack2(){
                 enemyAttack()
                 player_active = true
                 weapon1cooldown = false      
-                weapon2cooldown = false   
+                weapon2cooldown = false
             }, 3000);
         }
 
@@ -260,7 +263,42 @@ function attack2(){
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }
+function cooldown(){
+    fetch('/static/json/items.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(items => {
+        if (player_turns > 0){
+            player_turns -= 1
+            heat -= EquipedTorso.cooling
+            if (heat < 0){
+                heat = 0
+            }
+        }
 
+
+
+        if (player_turns == 0 && player_active == true){
+            player_active = false
+            enemy_turns = 2
+            energy += EquipedTorso.electric_regen
+            if (energy > energyCapacity){
+                energy = energyCapacity
+            }
+            setTimeout(function (){
+                enemyAttack()         
+            }, 2000);
+            setTimeout(function (){
+                enemyAttack()
+                player_active = true    
+                weapon1cooldown = false
+                weapon2cooldown = false      
+            }, 3000);
+        }
+
+        updateBattleStats();
+    })
+    .catch(error => console.error("Error fetching items.json:", error));     
+}
 
 function enemyAttack(){
     fetch('/static/json/items.json')
@@ -289,6 +327,20 @@ function enemyAttack(){
             if (enemyEnergy > enemyEnergyCapacity){
                 enemyEnergy = enemyEnergyCapacity
             }
+            setTimeout(function (){
+                if (heat > heatCapacity){
+                    cooldown()
+                }   
+                updateBattleStats();
+            }, 1000);
+            setTimeout(function (){
+                if (heat > heatCapacity){
+                    cooldown()
+                } 
+                updateBattleStats();
+            }, 2000);
+            
+            updateBattleStats();
         }
 
         updateBattleStats();
