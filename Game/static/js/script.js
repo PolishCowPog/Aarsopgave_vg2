@@ -24,9 +24,7 @@ var enemyEquipedWeapon2 = "Loading"
 
 
 if (window.location.pathname === '/battle/') {
-    initiateBattle();
-
-    updateBattleStats();
+    window.onload = initiateBattle()
 }
 
 function initiateBattle() {
@@ -87,6 +85,8 @@ function initiateBattle() {
 
         document.getElementById("turn1").style.backgroundColor = "#3fc43f"
         document.getElementById("turn2").style.backgroundColor = "#3fc43f"
+
+        updateBattleStats();
     })
     .catch(error => console.error("Error fetching items.json:", error));
 }

@@ -178,8 +178,14 @@ body{
 }
 
 .surrender{
+    margin-top: 10px;
+    color: #fff;
     display: flex;
     justify-self: center;
+    font-size: 25px;
+    text-decoration: none;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .playerHealthBar{
