@@ -49,22 +49,6 @@ body{
     border: #7c7c7c 2px solid;
     border-radius: 15px;
 }
-@media screen and (max-width: 650px) {
-    .title{
-        width: 90vw;
-        font-size: 25px;
-        }
-    .main_menu{
-        height: 90vw;
-        width: 90vw;
-        }
-    .main_menu a{
-        width: 70vw;
-        }
-    .main_menu button{
-        width: 70vw;
-        }
-}
 
 .main_menu{
     height: 550px;
@@ -124,6 +108,34 @@ body{
     border: #73A5D3 7px solid;
 }
 
+@media screen and (max-width: 650px) {
+    .title{
+        width: 90vw;
+        font-size: 25px;
+        }
+    .main_menu{
+        height: 90vw;
+        width: 90vw;
+        }
+    .main_menu a{
+        width: 70vw;
+        }
+    .main_menu button{
+        width: 70vw;
+        }
+}
+@media screen and (max-height: 650px) {
+    .title{
+        font-size: 20px;
+        height: 5vw;
+    }
+    .main_menu a{
+        height: 4vw;
+    }
+    .main_menu button{
+        height: 4vw;
+    }
+}
 
 /* base.html --------------------------------------------------------------------------------------------------------------- */
 .header{
@@ -170,6 +182,11 @@ body{
     background-color: #99c4ed;
     border: #73A5D3 3.5px solid;
 }
+@media screen and (max-height: 400px) {
+    .sideMenu{
+        gap: 5px;
+    }
+}
 
 .header p{
     background-color: #7c7c7c;
@@ -199,6 +216,15 @@ body{
     border: solid 3px #000;
 }
 
+@media screen and (max-height: 650px) {
+    .login_register input{
+        height: 5vw;
+        font-size: 20px;
+    }
+    .login_register{
+        gap: 15px;
+    }
+}
 
 /* map.html --------------------------------------------------------------------------------------------------------------- */
 .test {
