@@ -8,8 +8,8 @@ app.secret_key = 'MechWarsKey'
 
 # Database connection
 db_config = {
-    'host': "10.2.3.58",
-    'user': "mechwars",
+    'host': "10.2.2.240",
+    'user': "Jakub_U",
     'password': "1234",
     'database': "MechWars"
 }

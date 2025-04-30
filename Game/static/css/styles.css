@@ -23,42 +23,63 @@ body{
     top: 0;
 }
 
+
+
+
+/* Index.html --------------------------------------------------------------------------------------------------------------- */
+.all_contrainer{
+    width: 100vw;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+}
 .title{
-    width: 96%;
+    width: 50vw;
     height: 100px;
     color: #000;
     font-size: 30px;
     font-family: 'Arial';
-    margin: 2%;
     justify-content: center;
     align-items: center;
+    margin: 0 auto; /* Center horizontally */
+    margin-bottom: 25px;
+    margin-top: 25px;
     display: flex;
     background-color: #adadadb4;
     border: #7c7c7c 2px solid;
     border-radius: 15px;
 }
+@media screen and (max-width: 650px) {
+    .title{
+        width: 90vw;
+        font-size: 25px;
+        }
+    .main_menu{
+        height: 90vw;
+        width: 90vw;
+        }
+    .main_menu a{
+        width: 70vw;
+        }
+    .main_menu button{
+        width: 70vw;
+        }
+}
 
-
-
-/* Index.html --------------------------------------------------------------------------------------------------------------- */
 .main_menu{
     height: 550px;
     width: 400px;
     background-color: #adadadb4;
     color: white;
     padding: 10px;
-    position: absolute;
-    margin-left: 35.5%;
+    margin: 0 auto; /* Center horizontally */
     border-radius: 15px;
     border: #7c7c7c 2px solid;
-
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 }
-
 .main_menu a{
     width: 300px;
     height: 75px;
@@ -95,10 +116,13 @@ body{
 }
 
 .main_menu a:hover{
-    background-color: #499deb;
-    border: #3d83c5 7px solid;
+    background-color: #99c4ed;
+    border: #73A5D3 7px solid;
 }
-
+.main_menu button:hover{
+    background-color: #99c4ed;
+    border: #73A5D3 7px solid;
+}
 
 
 /* base.html --------------------------------------------------------------------------------------------------------------- */
@@ -110,13 +134,14 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     gap: 50px;
-    padding-left: 75px;
+    left: 0;
+    padding-left: 15vw;
     align-items: center;
 
 }
 
 .sideMenu{
-    width: 5%;
+    width: 70px;
     height: 100%;
     background-color: #adadad;
     display: flex;
@@ -125,11 +150,25 @@ body{
     gap: 50px;
 }
 .sideMenu a{
-    text-decoration: none;
+    width: 64px;
+    height: 64px;
+    background-color: #73A5D3;
+    border: #3b7dbb 3.5px solid;
+    border-radius: 15px;
     color: #000;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+.sideMenu a:hover{
+    background-color: #99c4ed;
+    border: #73A5D3 3.5px solid;
 }
 
 .header p{
@@ -163,7 +202,7 @@ body{
 
 /* map.html --------------------------------------------------------------------------------------------------------------- */
 .test {
-    margin-left: 5%; /* Remove margin */
+    margin-left: 5%;
 }
 
 
