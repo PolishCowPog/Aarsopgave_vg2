@@ -616,3 +616,15 @@ body{
     align-items: center;
     font-size: 30px;
 }
+
+#logContainer{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    left: 40%;
+    top: 20%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}

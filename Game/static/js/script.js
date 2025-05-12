@@ -265,6 +265,10 @@ function cooldown(){
             if (heat < 0){
                 heat = 0
             }
+            document.getElementById("logList").append("Cooling down...")
+            document.getElementById("logList").append(document.createElement("br"))
+            
+
         }
         
         
